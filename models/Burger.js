@@ -17,7 +17,7 @@ Burger.init({
         type: DataTypes.STRING,
     },
     ingredients: {
-        type: DataTypes.ARRAY,
+        type: DataTypes.STRING,
     },
     date_created: {
         type: DataTypes.DATE,
