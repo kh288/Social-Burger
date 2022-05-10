@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require(`sequelize`);
-const sequelize = require(`../config/connection`);
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Burger extends Model {}
 
@@ -13,6 +13,9 @@ Burger.init({
     title: {
         type: DataTypes.STRING,
     },
+    ingredients: {
+        type: DataTypes.STRING,
+    },
     date_created: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -21,15 +24,8 @@ Burger.init({
     user_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: `user`,
-            key: `id`,
-        },
-    },
-    ingredient_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: `ingredient`,
-            key: `id`,
+            model: 'user',
+            key: 'id',
         },
     },
 },{
@@ -37,7 +33,7 @@ Burger.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `post`,
+    modelName: 'burger',
 });
 
-module.exports = Post;
+module.exports = Burger;
