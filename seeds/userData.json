@@ -1,6 +1,10 @@
 [
     {
-        "name": "Kevin",
+        "username": "kevin",
+        "password": "password"
+    },
+    {
+        "username": "walter",
         "password": "password"
     }
 ]

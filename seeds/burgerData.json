@@ -1,7 +1,12 @@
 [
     {
         "title": "My first cheese burger!",
-        "ingredients": [1,10,23],
+        "ingredients": ["23, 10, 1"],
         "user_id": 1
+    },
+    {
+        "title": "Walter's burger!",
+        "ingredients": ["4, 15, 1"],
+        "user_id": 2
     }
 ]
