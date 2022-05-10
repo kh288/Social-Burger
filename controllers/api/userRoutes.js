@@ -1,5 +1,4 @@
 const router = require('express').Router()
-const res = require('express/lib/response');
 const { User } = require('../../models');
 const withAuth = require('../../utils');
 
@@ -42,6 +41,16 @@ router.post('/login', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
+})
 
 
 module.exports = router;
