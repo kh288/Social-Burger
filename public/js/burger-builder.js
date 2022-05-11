@@ -139,13 +139,6 @@ function addEventListeners() {
 // Function to generate the buttons for ingredients
 function generateIngredientButtons() {
     for (var i = 0; i < ingredients.length; i++) {
-        // create button
-            // Give attributes "class: 'btn'"
-        // create img
-            // give attributes "class: 'ingredient card-img-top'"
-            // img appendChild to button
-        // button appendChild to ingredientsButtons
-
         // Create button
         var button = document.createElement('button');
             button.setAttribute('id', i + 1);
@@ -154,9 +147,9 @@ function generateIngredientButtons() {
         // Create image to then append to button
         var image = document.createElement('img');
             image.setAttribute('class', 'card-img-top');
-            image.setAttribute('src', '../assets/ingredients/ingredient-' + (i + 1) + '.png');
+            image.setAttribute('src', '../public/assets/ingredients/ingredient-' + (i + 1) + '.png');
             button.appendChild(image);
-            // ../assets/ingredients/ingredient-' + i + '.png
+        // Append to HTML buttons
         ingredientsButtons.appendChild(button);
     }
 }
@@ -169,6 +162,7 @@ function appendIngredient(e) {
         while (burgerGen.firstChild) {
             burgerGen.removeChild(burgerGen.firstChild);
         }
+        console.log(ingredients[e.view.document.activeElement.id].name + ' Added');
     }
 
     var burger = document.createElement('div');
@@ -176,9 +170,9 @@ function appendIngredient(e) {
 
     for (var i = burgerArray.length-1; i >= 0; i--) {
         var image = document.createElement('img');
-            image.setAttribute('style', `z-index: ${i}; margin-top: -100%; position: relative;`);
-            image.setAttribute('class', 'ingredient');
-            image.setAttribute('src', '../assets/ingredients/ingredient-'+ burgerArray[i] +'.png');
+            image.setAttribute('style', `z-index: ${i}; position: relative;`);
+            image.setAttribute('class', 'ingredient p-3');
+            image.setAttribute('src', '../public/assets/ingredients/ingredient-'+ burgerArray[i] +'.png');
             burger.appendChild(image);
         burgerGen.appendChild(burger);
     }
