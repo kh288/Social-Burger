@@ -126,6 +126,16 @@ const ingredients = [
     }
 ];
 
+// const ingredients = function getIngredients() {
+//     fetch('../public/assets/ingredients-list.json')
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data)
+//         return data;
+//     })
+//     .catch(error => console.log(error));
+// }
+
 const ingredientsButtons = document.querySelector('#ingredients');
 const burgerGen = document.querySelector('#burger-gen');
 const burgerArray = [];
@@ -143,7 +153,7 @@ function generateIngredientButtons() {
         var button = document.createElement('button');
         button.setAttribute('id', i + 1);
         button.setAttribute('class', 'btn col-4');
-        console.log(ingredients[i].name);
+        // console.log(ingredients[i].name);
         // Create image to then append to button
         var image = document.createElement('img');
             image.setAttribute('class', 'card-img-top');
@@ -162,7 +172,7 @@ function appendIngredient(e) {
         while (burgerGen.firstChild) {
             burgerGen.removeChild(burgerGen.firstChild);
         }
-        console.log(ingredients[e.view.document.activeElement.id].name + ' Added');
+        // console.log(ingredients[e.view.document.activeElement.id].name + ' Added');
     }
 
     var burger = document.createElement('div');
