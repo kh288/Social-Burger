@@ -132,7 +132,7 @@ const burgerArray = [];
 
 function addEventListeners() {
     for (var i = 0; i < ingredients.length; i++) {
-        document.getElementById(i+1).addEventListener('click', appendIngredient);
+        document.getElementById(i + 1).addEventListener('click', appendIngredient);
     }
 }
 
@@ -141,9 +141,9 @@ function generateIngredientButtons() {
     for (var i = 0; i < ingredients.length; i++) {
         // Create button
         var button = document.createElement('button');
-            button.setAttribute('id', i + 1);
-            button.setAttribute('class', 'btn col-4');
-            console.log(ingredients[i].name);
+        button.setAttribute('id', i + 1);
+        button.setAttribute('class', 'btn col-4');
+        console.log(ingredients[i].name);
         // Create image to then append to button
         var image = document.createElement('img');
             image.setAttribute('class', 'card-img-top');
@@ -166,14 +166,15 @@ function appendIngredient(e) {
     }
 
     var burger = document.createElement('div');
-        burger.setAttribute('id', 'burger');
+    burger.setAttribute('id', 'burger');
 
-    for (var i = burgerArray.length-1; i >= 0; i--) {
+    for (var i = burgerArray.length - 1; i >= 0; i--) {
         var image = document.createElement('img');
             image.setAttribute('style', `z-index: ${i}; position: relative;`);
             image.setAttribute('class', 'ingredient p-3');
             image.setAttribute('src', '../public/assets/ingredients/ingredient-'+ burgerArray[i] +'.png');
             burger.appendChild(image);
+
         burgerGen.appendChild(burger);
     }
 }
