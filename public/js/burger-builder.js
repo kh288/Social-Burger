@@ -100,6 +100,7 @@ const ingredients = [
         "cost": 0.25
     }
 ];
+
 const ingredientsButtons = document.querySelector('#ingredients');
 
 function generateIngredientButtons() {
@@ -113,10 +114,10 @@ function generateIngredientButtons() {
 
         // Create button
         var button = document.createElement('button');
-            button.setAttribute('style', 'btn');
+            button.setAttribute('style', 'btn col-4');
         // Create image to then append to button
         var image = document.createElement('img');
-        image.setAttribute('style', 'ingredient col-4 card-img-top');
+        image.setAttribute('style', 'card-img-top');
             image.setAttribute('src', '../assets/ingredients/ingredient-1.png');
             button.appendChild(image);
             // ../assets/ingredients/ingredient-' + i + '.png
@@ -124,4 +125,4 @@ function generateIngredientButtons() {
     }
 }
 
-// generateIngredientButtons();
+generateIngredientButtons();
