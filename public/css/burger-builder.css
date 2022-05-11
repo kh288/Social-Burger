@@ -1,0 +1,106 @@
+body{
+    background-color:#101010;
+}
+/* Navbar attributes */
+
+.navbar{
+    background-color: #101010;
+    padding: 1rem;
+    outline: 4px solid white;
+    
+}
+
+.navbartext{
+    font-size: 2.4rem;
+    margin-left: 1.9rem;
+    color: white;
+    text-shadow: 0 0 3px grey;
+    /* font-family: 'Amatic SC', cursive; */
+    font-family: 'Gloria Hallelujah', cursive;
+    transition: transform 300ms;
+}
+
+.navbartext:hover{
+    color: rgb(232, 38, 38);
+    transform: translateY(-2px);
+    text-decoration: underline;
+    
+}
+
+/* Login and Signup attributes */
+
+.signup-form,
+.login-form{
+    margin-top: 2.5rem;
+    background-color: #101010;;
+    border-radius: 30px;
+    padding: 4.2rem;
+    color: #fff;
+    font-size: larger;
+    outline: 4px solid white;
+    
+}
+
+.card-title{
+    margin-bottom: 3.3rem;
+    font-size: 2.4rem;
+    
+}
+
+.registerHref{
+    color: #fff;
+    text-decoration: none;
+}
+
+.registerSpan{
+    color: rgb(232, 38, 38);
+    text-decoration: none;
+    margin-left: 1rem;
+    font-family: 'Gloria Hallelujah', cursive;
+    
+}
+
+.signupBtn,
+.loginBtn{
+    background-color: rgb(232, 38, 38);
+    border-radius: 10px;
+    /* font-family: 'Gloria Hallelujah', cursive; */
+    padding-right: 3rem;
+    padding-left: 3rem;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.registerHref:hover{
+    color: #fff;
+}
+
+.registerSpan:hover{
+    text-decoration:line-through;
+    color: #fff;
+    font-size: 20px;
+}
+
+.loginBtn:hover{
+    color:#fff;
+}
+
+/* Burger Container Attributes */
+.burgers-container{
+    margin-top: 1.9rem;
+}
+
+.burgerCardContainer{
+/* margin:30px; */
+  /* display:flex; */
+  /* flex-direction:row; */
+  /* width:300px; */
+  /* height:80px; */
+  /* border:1px red solid;
+  padding:5px; */
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+    margin-top: 1.6rem;
+    justify-content: center;
+    align-items: center;
+}
