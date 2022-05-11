@@ -132,7 +132,7 @@ const burgerArray = [];
 
 function addEventListeners() {
     for (var i = 0; i < ingredients.length; i++) {
-        document.getElementById(i+1).addEventListener('click', appendIngredient);
+        document.getElementById(i + 1).addEventListener('click', appendIngredient);
     }
 }
 
@@ -140,23 +140,23 @@ function addEventListeners() {
 function generateIngredientButtons() {
     for (var i = 0; i < ingredients.length; i++) {
         // create button
-            // Give attributes "class: 'btn'"
+        // Give attributes "class: 'btn'"
         // create img
-            // give attributes "class: 'ingredient card-img-top'"
-            // img appendChild to button
+        // give attributes "class: 'ingredient card-img-top'"
+        // img appendChild to button
         // button appendChild to ingredientsButtons
 
         // Create button
         var button = document.createElement('button');
-            button.setAttribute('id', i + 1);
-            button.setAttribute('class', 'btn col-4');
-            console.log(ingredients[i].name);
+        button.setAttribute('id', i + 1);
+        button.setAttribute('class', 'btn col-4');
+        console.log(ingredients[i].name);
         // Create image to then append to button
         var image = document.createElement('img');
-            image.setAttribute('class', 'card-img-top');
-            image.setAttribute('src', '../assets/ingredients/ingredient-' + (i + 1) + '.png');
-            button.appendChild(image);
-            // ../assets/ingredients/ingredient-' + i + '.png
+        image.setAttribute('class', 'card-img-top');
+        image.setAttribute('src', '../assets/ingredients/ingredient-' + (i + 1) + '.png');
+        button.appendChild(image);
+        // ../assets/ingredients/ingredient-' + i + '.png
         ingredientsButtons.appendChild(button);
     }
 }
@@ -172,14 +172,14 @@ function appendIngredient(e) {
     }
 
     var burger = document.createElement('div');
-        burger.setAttribute('id', 'burger');
+    burger.setAttribute('id', 'burger');
 
-    for (var i = burgerArray.length-1; i >= 0; i--) {
+    for (var i = burgerArray.length - 1; i >= 0; i--) {
         var image = document.createElement('img');
-            image.setAttribute('style', `z-index: ${i}; margin-top: -100%; position: relative;`);
-            image.setAttribute('class', 'ingredient');
-            image.setAttribute('src', '../assets/ingredients/ingredient-'+ burgerArray[i] +'.png');
-            burger.appendChild(image);
+        image.setAttribute('style', `z-index: ${i}; margin-top: -100%; position: relative;`);
+        image.setAttribute('class', 'ingredient');
+        image.setAttribute('src', '../assets/ingredients/ingredient-' + burgerArray[i] + '.png');
+        burger.appendChild(image);
         burgerGen.appendChild(burger);
     }
 }
