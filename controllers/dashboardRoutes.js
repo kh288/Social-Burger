@@ -10,7 +10,7 @@ router.get('/', withAuth, async (req, res) => {
         });
         const burgers = burgerData.map((burger) => burger.get({ plain: true }));
         console.log(burgers);
-        res.render('thiswillbemytemplate', { layout: '', burgers, });
+        res.render('all-my-burgers', { layout: 'dashboard', burgers, });
     } catch (err) {
         res.redirect('login');
     }
@@ -22,7 +22,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         if (burgerData) {
             const burgers = burgerData.get({ plain: true });
             console.log(burgers);
-            res.render('thiswillbemytemplate', { layout: '', burgers, });
+            res.render('edit-burger', { layout: 'dashboard', burgers, });
         } else {
             res.status(400).end();
         }

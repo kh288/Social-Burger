@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
             ],
         });
         const postBurgerData = burgerData.map((burger) => burger.get({ plain: true }));
-        res.render('thiswillbemyhandlebarinthefuture', { layout: '', postBurgerData, logged_in: req.session.logged_in });
+        res.render('homepage', { layout: 'main', postBurgerData, logged_in: req.session.logged_in });
 
     } catch (err) {
         res.status(500).json(err);
@@ -36,7 +36,7 @@ router.get('/burger/:id', async (req, res) => {
 
         const postBurgerData = burgerData.get({ plain: true });
 
-        res.render('thiswillbemyhandlebarinthefuture', { layout: '', postBurgerData, logged_in: req.session.logged_in });
+        res.render('one-burger', { layout: 'main', postBurgerData, logged_in: req.session.logged_in });
 
     } catch (err) {
         res.status(500).json(err);
