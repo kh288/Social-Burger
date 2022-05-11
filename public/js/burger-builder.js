@@ -102,6 +102,15 @@ const ingredients = [
 ];
 
 const ingredientsButtons = document.querySelector('#ingredients');
+const burgerGen = document.querySelector('#burger-gen');
+
+function addEventListeners() {
+    for (var i = 0; i < ingredients.length; i++) {
+        document.getElementById(i+1).addEventListener('click', appendIngredient);
+    }
+}
+
+const burgerArray = [];
 
 function generateIngredientButtons() {
     for (var i = 1; i <= ingredients.length; i++) {
@@ -114,15 +123,41 @@ function generateIngredientButtons() {
 
         // Create button
         var button = document.createElement('button');
-            button.setAttribute('style', 'btn col-4');
+            button.setAttribute('id', i);
+            button.setAttribute('class', 'btn col-4');
         // Create image to then append to button
         var image = document.createElement('img');
-        image.setAttribute('style', 'card-img-top');
-            image.setAttribute('src', '../assets/ingredients/ingredient-1.png');
+            image.setAttribute('class', 'card-img-top');
+            image.setAttribute('src', '../assets/ingredients/ingredient-' + i + '.png');
             button.appendChild(image);
             // ../assets/ingredients/ingredient-' + i + '.png
         ingredientsButtons.appendChild(button);
     }
 }
 
+function appendIngredient(e) {
+    e.preventDefault();
+    burgerArray.push(e.view.document.activeElement.id);
+
+    if (burgerGen.firstChild) {
+        while (burgerGen.firstChild) {
+            burgerGen.removeChild(burgerGen.firstChild);
+        }
+    }
+
+    var burger = document.createElement('div');
+        burger.setAttribute('id', 'burger');
+
+    for (var i = burgerArray.length; i >= 0; i--) {
+        var image = document.createElement('img');
+            image.setAttribute('style', `z-index: ${i}; margin-top: -100%; position: relative;`);
+            image.setAttribute('class', 'ingredient');
+            image.setAttribute('src', '../assets/ingredients/ingredient-'+ burgerArray[i] +'.png');
+            burger.appendChild(image);
+        burgerGen.appendChild(burger);
+    }
+}
+
 generateIngredientButtons();
+
+addEventListeners();
