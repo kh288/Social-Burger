@@ -1,4 +1,4 @@
-const ingredients = [
+[
     {
         "name": "top-bun",
         "cost": 0.25
@@ -103,8 +103,4 @@ const ingredients = [
         "name": "radishes",
         "cost": 0.25
     }
-];
-
-function generateIngredientButtons() {
-    
-}
+]
