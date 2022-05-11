@@ -56,10 +56,6 @@ const ingredients = [
         "cost": 2.3
     },
     {
-        "name": "avacado",
-        "cost": 2.3
-    },
-    {
         "name": "onion-rings",
         "cost": 1.4
     },
@@ -104,7 +100,28 @@ const ingredients = [
         "cost": 0.25
     }
 ];
+const ingredientsButtons = document.querySelector('#ingredients');
 
 function generateIngredientButtons() {
-    
+    for (var i = 1; i <= ingredients.length; i++) {
+        // create button
+            // Give attributes "class: 'btn'"
+        // create img
+            // give attributes "class: 'ingredient card-img-top'"
+            // img appendChild to button
+        // button appendChild to ingredientsButtons
+
+        // Create button
+        var button = document.createElement('button');
+            button.setAttribute('style', 'btn');
+        // Create image to then append to button
+        var image = document.createElement('img');
+        image.setAttribute('style', 'ingredient col-4 card-img-top');
+            image.setAttribute('src', '../assets/ingredients/ingredient-1.png');
+            button.appendChild(image);
+            // ../assets/ingredients/ingredient-' + i + '.png
+        ingredientsButtons.appendChild(button);
+    }
 }
+
+// generateIngredientButtons();
