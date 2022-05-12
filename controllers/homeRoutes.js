@@ -25,27 +25,30 @@ router.get('/', async (req, res) => {
 
 router.get('/burger/:id', withAuth, async (req, res) => {
     try {
-        const burgerData = await Burger.findByPk(req.params.id, {
-            include: [{
-                model: User,
-                attributes: [`username`]
-            }, {
-                model: Comment,
-                include: [{
-                    model: User,
-                    attributes: [`username`]
-                }]
-            }]
+        const burgerData = await Burger.findOne({
+            where: { id: req.params.id },
+            include: [
+                User,
+                {
+                    model: Comment,
+                    include: [User],
+                },
+            ]
         });
 
-        const burger = burgerData.get({ plain: true });
-
-        res.render('one-burger', { layout: 'main', burger, logged_in: req.session.logged_in });
-
+        if (burgerData) {
+            const burger = burgerData.get({ plain: true });
+            console.log(burger);
+            res.render('one-burger', { layout: 'main', burger, logged_in: req.session.logged_in });
+        } else {
+            res.status(404).end();
+        }
     } catch (err) {
         res.status(500).json(err);
     }
 })
+
+
 router.get('/login', async (req, res) => {
     try {
         if (req.session.logged_in) {
