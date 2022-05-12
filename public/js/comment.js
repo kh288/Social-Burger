@@ -1,19 +1,18 @@
 
-
 const commentFormHandler = async (event) => {
     event.preventDefault();
 
-    const burgerId = document.querySelector('input[name="burger-id"]').value;
+    const burgerId = document.querySelector('.burgerId-input').value.trim()
     console.log(burgerId);
 
-    const commentContent = document.querySelector('#comment-body');
+    const commentContent = document.querySelector('.comment-input').value.trim()
     console.log(commentContent);
 
     const response = await fetch('/api/comment', {
         method: 'POST',
         body: JSON.stringify({
-            text: commentContent.value,
-            burger_id: burgerId
+            text: commentContent,
+            burger_id: burgerId,
         }),
         headers: { 'Content-Type': 'application/json' },
     });
@@ -27,5 +26,5 @@ const commentFormHandler = async (event) => {
 
 
 document
-    .querySelector('#new-comment-form')
+    .querySelector('.commentForm')
     .addEventListener('submit', commentFormHandler);
