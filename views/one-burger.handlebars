@@ -10,15 +10,24 @@
     </div>  
         <p class="card-body">
         {{burger.ingredients}}
+        {{burger_id}}
         </p>
 </div>
         <div class="card">
+            <input type="hidden" name="burgerId-input" value="{{burger.burger_id}}"/>
             <div class="card-header"></div>
-            <form class="card-body" id="new-comment-form">
-                <input type="hidden"  class="burgerId" name="burger-id" value="{{burger.burger_id}}"/>
-                <p class="form-label">Comment:</p>
-                <textarea class="form-input commentInput" name="comment-body"></textarea>
-                <button type="submit" class="btn btn-primary">Submit:</button>
+            <form class="card-body commentForm">
+                {{!-- <label for="burger_id" class="form-label"></label> --}}
+                {{!-- <input type="text"  class="burgerId-input" value="{{burger.burger_id}}"/> --}}
+                <label for="comment" class="form-label"></label>
+                <input type="text" class="form-input comment-input">
+                <button type="submit" class="btn btn-primary signupBtn">submit</button>
+            
+            
+            <h1>{{burger.burger_id}}</h1>
+            
+            
+            
             </form>
                 {{!-- <div class="comments">
                 {{#each this}}
