@@ -127,8 +127,11 @@ const ingredients = [
 ];
 
 const ingredientsButtons = document.querySelector('#ingredients');
+const ingredientCostEl = document.querySelector('#ingredient-cost');
 const burgerGen = document.querySelector('#burger-gen');
+const burgerCostEl = document.querySelector('#burger-cost');
 const burgerArray = [];
+let burgerCost = 0;
 
 function addEventListeners() {
     for (var i = 0; i < ingredients.length; i++) {
@@ -141,41 +144,59 @@ function generateIngredientButtons() {
     for (var i = 0; i < ingredients.length; i++) {
         // Create button
         var button = document.createElement('button');
-        button.setAttribute('id', i + 1);
-        button.setAttribute('class', 'btn col-4');
+            button.setAttribute('id', i + 1);
+            button.setAttribute('class', 'btn col-4');
         // console.log(ingredients[i].name);
         // Create image to then append to button
         var image = document.createElement('img');
-        image.setAttribute('class', 'card-img-top');
-        image.setAttribute('src', '/assets/ingredients/ingredient-' + (i + 1) + '.png');
-        button.appendChild(image);
+            image.setAttribute('class', 'card-img-top');
+            image.setAttribute('src', '/assets/ingredients/ingredient-' + (i + 1) + '.png');
+            button.setAttribute('content', `${ingredients[i].name}`)
+            button.appendChild(image);
         // Append to HTML buttons
         ingredientsButtons.appendChild(button);
     }
 }
 
+// Function to append ingredients to page upon click of each button
 function appendIngredient(e) {
     e.preventDefault();
+    // Takes the id of the button that was just pressed and pushes it to the burger array
+    // We push because the top of the burger is the last element in the array.
     burgerArray.push(e.view.document.activeElement.id);
-
+    // If there's already a burger displayed
+    // Then delete it before displaying updated burger with new ingredient on it
     if (burgerGen.firstChild) {
         while (burgerGen.firstChild) {
             burgerGen.removeChild(burgerGen.firstChild);
         }
-        // console.log(ingredients[e.view.document.activeElement.id].name + ' Added');
     }
+    // zero out burger cost so we can re-add up the price
+    burgerCost = 0;
 
+    // div which we bind the ingredients to
     var burger = document.createElement('div');
-    burger.setAttribute('id', 'burger');
-
+        burger.setAttribute('id', 'burger');
+    
+    // We loop through our current burger array
+        // Create x amount of images coorisponding to the ingredients that are in our burger array
+        // [3, 2, 6, 7] Imagine this array flipped on it's side with the 3 on bottom, and the 7 on top.
+        // The first element is the bottom of the burger, the last is the top.
     for (var i = burgerArray.length - 1; i >= 0; i--) {
         var image = document.createElement('img');
-        image.setAttribute('style', `z-index: ${i}; position: relative; margin-bottom: ${ingredients[i].botmargin}%`);
-        image.setAttribute('class', 'ingredient p-3');
-        image.setAttribute('src', '/assets/ingredients/ingredient-' + burgerArray[i] + '.png');
+        image.setAttribute('style',
+            `z-index: ${i};
+            position: relative;`);
+        image.setAttribute('class',
+            'ingredient p-3');
+        image.setAttribute('src',
+            '/assets/ingredients/ingredient-' + burgerArray[i] + '.png');
         burger.appendChild(image);
         burgerGen.appendChild(burger);
+        // Also add the cost of the burger
+        burgerCost += ingredients[burgerArray[i] - 1].cost;
     }
+    appendBurgerCost();
 }
 
 generateIngredientButtons();
@@ -184,23 +205,38 @@ addEventListeners();
 const submitBurger = async (event) => {
     event.preventDefault();
 
-    const burgerTitle = document.querySelector('#burger-title');
+    const burgerTitle = document.querySelector('#burger-title').value.trim();
 
     var cleanBurger = burgerArray.toString();
 
     const response = await fetch('/api/burger', {
         method: 'POST',
         body: JSON.stringify({
-            title: burgerTitle.value,
+            title: burgerTitle,
             ingredients: cleanBurger
-        })
+        }),
+        headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
+        console.log('Successfully submitted burger');
         document.location.replace('/');
     } else {
+        console.log(`Title: Sent typeof: ${typeof burgerTitle.value}: ${burgerTitle.value}`);
+        console.log(`Burger: Sent typeof: ${typeof cleanBurger}: ${cleanBurger}`);
         alert('Failed to submit burger');
     }
 };
 
-document.querySelector('#submit-burger').addEventListener('submit', submitBurger);
+// Append burger cost stats to page
+function appendBurgerCost() {
+    // var ingredientTotals = document.createElement('div');
+    //     ingredientTotals.setAttribute('id', 'ingredient-totals');
+    // for (var i = 0; i < burgerArray; i++) {
+    //     var p = document.createElement('p');
+    //         p.setAttribute('name', ``)
+        // ingredientCostEl. APPEND TO THIS IN THE END
+    // }
+    burgerCostEl.textContent = `$${burgerCost.toFixed(2)}`;
+}
 
+document.querySelector('#submit-burger').addEventListener('submit', submitBurger);
