@@ -116,8 +116,13 @@ body{
     margin-top: 1.6rem;
     justify-content: center;
     align-items: center;
+    background-color: #222222;
+    outline: 4px solid #ddd;
 }
 
+.homepageBurger{
+    color: aqua;
+}
 /* For genered burger renderer */
 .ingredient {
     max-width: 100%;
