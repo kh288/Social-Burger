@@ -19,10 +19,18 @@
 
         <div class="card burger-card">
             <h2 class="card-title text-center p-3">Results</h2>
-            <h3 class="col-6">Total Cost</h3>
-            <h4 id="burger-cost" class="card-body">
-                {{!-- GENERATED COST GOES HERE --}}
-            </h4>
+            <div class="card">
+                <h3 class="col-6">Total Cost</h3>
+                <div id="ingredient-cost" class="card-body">
+                    {{!-- GENERATED INDIVIDUAL COSTS GO HERE --}}
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="col-6">Total Cost</h3>
+                <h4 id="burger-cost" class="card-body">
+                    {{!-- GENERATED COST GOES HERE --}}
+                </h4>
+            </div>
             <form id="submit-burger" class="form-label input-group mb-3">
                 <input id="burger-title" type="text" class="form-control" placeholder="Burger Title" aria-label="Recipient's username" aria-describedby="basic-addon2">
             </form>

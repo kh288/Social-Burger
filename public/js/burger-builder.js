@@ -127,6 +127,7 @@ const ingredients = [
 ];
 
 const ingredientsButtons = document.querySelector('#ingredients');
+const ingredientCostEl = document.querySelector('#ingredient-cost');
 const burgerGen = document.querySelector('#burger-gen');
 const burgerCostEl = document.querySelector('#burger-cost');
 const burgerArray = [];
@@ -170,10 +171,13 @@ function appendIngredient(e) {
             burgerGen.removeChild(burgerGen.firstChild);
         }
     }
+    // zero out burger cost so we can re-add up the price
+    burgerCost = 0;
+
     // div which we bind the ingredients to
     var burger = document.createElement('div');
-    burger.setAttribute('id', 'burger');
-    burgerCost = 0;
+        burger.setAttribute('id', 'burger');
+    
     // We loop through our current burger array
         // Create x amount of images coorisponding to the ingredients that are in our burger array
         // [3, 2, 6, 7] Imagine this array flipped on it's side with the 3 on bottom, and the 7 on top.
@@ -189,8 +193,7 @@ function appendIngredient(e) {
             '/assets/ingredients/ingredient-' + burgerArray[i] + '.png');
         burger.appendChild(image);
         burgerGen.appendChild(burger);
-        // console.log(parseFloat(burgerArray[i]));
-        // console.log(ingredients[i].cost)
+        // Also add the cost of the burger
         burgerCost += ingredients[burgerArray[i] - 1].cost;
     }
     appendBurgerCost();
@@ -222,7 +225,13 @@ const submitBurger = async (event) => {
 
 // Append burger cost stats to page
 function appendBurgerCost() {
-    
+    var ingredientTotals = document.createElement('div');
+        ingredientTotals.setAttribute('id', 'ingredient-totals');
+    for (var i = 0; i < burgerArray; i++) {
+        var p = document.createElement('p');
+            p.setAttribute('name', ``)
+        // ingredientCostEl. APPEND TO THIS IN THE END
+    }
     burgerCostEl.textContent = `$${burgerCost.toFixed(2)}`;
 }
 
