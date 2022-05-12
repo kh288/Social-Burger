@@ -103,25 +103,46 @@ body{
     margin-top: 1.9rem;
 }
 
+
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .burgerCardContainer{
-/* margin:30px; */
-  /* display:flex; */
-  /* flex-direction:row; */
-  /* width:300px; */
-  /* height:80px; */
-  /* border:1px red solid;
-  padding:5px; */
-    margin-left: 1.6rem;
-    margin-right: 1.6rem;
-    margin-top: 1.6rem;
+    margin:30px; 
     justify-content: center;
     align-items: center;
     background-color: #222222;
     outline: 4px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px 4px rgba(12, 165, 139, 0.2);
+}
+
+.burgerImg{
+    background-color: yellow;
 }
 
 .homepageBurger{
-    color: aqua;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    display: block;
+}
+.author{
+    color: yellow;
+    text-transform: capitalize;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.textBurger{
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    display: block;
 }
 /* For genered burger renderer */
 .ingredient {
