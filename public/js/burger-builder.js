@@ -184,11 +184,30 @@ function appendIngredient(e) {
             image.setAttribute('class', 'ingredient p-3');
             image.setAttribute('src', '../public/assets/ingredients/ingredient-'+ burgerArray[i] +'.png');
             burger.appendChild(image);
-
         burgerGen.appendChild(burger);
     }
 }
 
 generateIngredientButtons();
-
 addEventListeners();
+
+const submitBurger = async (event) => {
+    event.preventDefault();
+
+    const burgerTitle = document.querySelector('#burger-title');
+
+    const response = await fetch('/api/burger', {
+        method: 'POST',
+        body: JSON.stringify({
+            title: burgerTitle.value,
+            ingredients: burgerArray
+        })
+    });
+    if (response.ok) {
+        document.location.replace('/dashboard');
+    } else {
+        alert('Failed to submit burger');
+    }
+};
+
+document.querySelector('#submit-burger').addEventListener('click', submitBurger);
