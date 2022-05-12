@@ -1,7 +1,7 @@
 const ingredients = [
     {
         "id": 1,
-        "name": "top-bun",
+        "name": "bottom-bun",
         "cost": 0.25
     },
     {
@@ -111,7 +111,7 @@ const ingredients = [
     },
     {
         "id": 23,
-        "name": "bottom-bun",
+        "name": "top-bun",
         "cost": 0.25
     },
     {

@@ -31,8 +31,17 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get('/new', withAuth, (req, res) => {
-    res.render('thiswillbemytemplate', { layout: '', });
+router.get('/create', withAuth, (req, res) => {
+    res.render('one-burger', { layout: 'dashboard', });
+    try {
+        if (req.session.logged_in) {
+            res.redirect(`/create`);
+        } else {
+            res.redirect('login')
+        }
+    } catch (error) {
+        res.status(500).json(error);
+    }
 });
 
 
