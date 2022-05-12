@@ -205,17 +205,17 @@ addEventListeners();
 const submitBurger = async (event) => {
     event.preventDefault();
 
-    const burgerTitle = document.querySelector('#burger-title');
+    const burgerTitle = document.querySelector('#burger-title').value.trim();
 
     var cleanBurger = burgerArray.toString();
 
     const response = await fetch('/api/burger', {
         method: 'POST',
         body: JSON.stringify({
-            title: burgerTitle.value,
+            title: burgerTitle,
             ingredients: cleanBurger
-            
-        })
+        }),
+        headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
         console.log('Successfully submitted burger');
