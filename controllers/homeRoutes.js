@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 
 router.get('/burger/:id', async (req, res) => {
     try {
-        const burgerData = await Burger.findOne(req.params.id, {
+        const burgerData = await Burger.findByPk(req.params.id, {
             where: { id: req.params.id },
             include: [User, {
                 model: Comment,
@@ -42,20 +42,28 @@ router.get('/burger/:id', async (req, res) => {
         res.status(500).json(err);
     }
 })
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/dashboard');
-        return;
+router.get('/login', async (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            res.redirect(`/dashboard`);
+        } else {
+            res.render(`login`);
+        }
+    } catch (error) {
+        res.status(500).json(error);
     }
-    res.render('login');
 });
 
-router.get('/signup', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/dashboard');
-        return;
+router.get('/signup', async (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            res.redirect(`/dashboard`);
+        } else {
+            res.render(`signup`);
+        }
+    } catch (error) {
+        res.status(500).json(error);
     }
-    res.render('signup');
 });
 
 
