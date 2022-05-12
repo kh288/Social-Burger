@@ -12,15 +12,15 @@
         {{burger.ingredients}}
         </p>
 </div>
-    <input type="hidden"  id="burgerId" name="burger-id" value="{{burger.id}}"/>
         <div class="card">
             <div class="card-header"></div>
             <form class="card-body" id="new-comment-form">
+                <input type="hidden"  class="burgerId" name="burger-id" value="{{burger.burger_id}}"/>
                 <p class="form-label">Comment:</p>
-                <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
+                <textarea class="form-input commentInput" name="comment-body"></textarea>
                 <button type="submit" class="btn btn-primary">Submit:</button>
             </form>
-                <div class="comments">
+                {{!-- <div class="comments">
                 {{#each this}}
                 <div>
                     <p class="card-body">
@@ -28,7 +28,9 @@
                     </p>
                 </div>
                 {{/each}}
-                </div>
+                </div> --}}
+
+                {{> comments burger.comments}}
         </div>
 
     <script src="/js/comment.js"></script>

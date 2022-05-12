@@ -1,19 +1,18 @@
 
-
 const commentFormHandler = async (event) => {
     event.preventDefault();
 
-    const burgerId = document.querySelector('input[name="burger-id"]').value;
+    const burgerId = document.querySelector('.burgerId')
     console.log(burgerId);
 
-    const commentContent = document.querySelector('#comment-body');
+    const commentContent = document.querySelector('.commentInput');
     console.log(commentContent);
 
     const response = await fetch('/api/comment', {
         method: 'POST',
         body: JSON.stringify({
             text: commentContent.value,
-            burger_id: burgerId
+            burger_id: burgerId.value,
         }),
         headers: { 'Content-Type': 'application/json' },
     });
