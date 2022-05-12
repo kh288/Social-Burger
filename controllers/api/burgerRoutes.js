@@ -6,8 +6,8 @@ router.post('/', withAuth, async (req, res) => {
     try {
         const newBurger = await Burger.create({
             title: req.body.title,
-            ingredients: req.body.ingredients,
-            user_id: req.session.user_id
+            ingredients: req.body.ingredients
+            // user_id: req.session.user_id
         })
         res.status(200).json(newBurger);
     } catch (err) {
