@@ -1,27 +1,24 @@
-
-    <div class="container">
-        <div class="row p-3">
-        <!-- CARD -->
-        <div class="card col-md-6">
-            <h5 class="card-title text-center p-3">Ingredients</h5>
-            <div id="ingredients" class="row p-3">
+<div class="card">
+    <div class="card-header  flex-row justify-space-between">
+            <h2>
+            <a href=''>
+                <div class="col-8">{{burger.title}}</div>
+            </a>
+            </h2>
+            <div class="col-3">posted by {{burger.user.username}} on {{format_date burger.date_created}}
             </div>
-        </div>
-        <div class="card col-md-6">
-            <h5 class="card-title text-center p-3">Burger</h5>
-            <div class="container justify-content-center">
-                <div id="burger-gen" style="margin-top: 100%;" class="row burger-stack">
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <h5 class="card-title text-center p-3">Results</h5>
-            <div class="card-body">
-            </div>
-          </div>
-        </div>
-      </div>
-
+    </div>  
+        <p class="card-body">
+        {{burger.ingredients}}
+        </p>
+</div>
+    <input type="hidden" name="post-id" value="{{burger.id}}"/>
+            <div class="card">
+            <div class="card-header"></div>
+            <form class="card-body" id="new-comment-form">
+                <p class="form-label">Comment:</p>
+                <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
+                <button type="submit" class="btn btn-primary">Submit:</button>
+            </form>
+    {{> comments burger.comments}}
     </div>
-
-<script src="/js/burger-builder.js"></script>
