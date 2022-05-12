@@ -214,24 +214,28 @@ const submitBurger = async (event) => {
         body: JSON.stringify({
             title: burgerTitle.value,
             ingredients: cleanBurger
+            
         })
     });
     if (response.ok) {
+        console.log('Successfully submitted burger');
         document.location.replace('/');
     } else {
+        console.log(`Title: Sent typeof: ${typeof burgerTitle.value}: ${burgerTitle.value}`);
+        console.log(`Burger: Sent typeof: ${typeof cleanBurger}: ${cleanBurger}`);
         alert('Failed to submit burger');
     }
 };
 
 // Append burger cost stats to page
 function appendBurgerCost() {
-    var ingredientTotals = document.createElement('div');
-        ingredientTotals.setAttribute('id', 'ingredient-totals');
-    for (var i = 0; i < burgerArray; i++) {
-        var p = document.createElement('p');
-            p.setAttribute('name', ``)
+    // var ingredientTotals = document.createElement('div');
+    //     ingredientTotals.setAttribute('id', 'ingredient-totals');
+    // for (var i = 0; i < burgerArray; i++) {
+    //     var p = document.createElement('p');
+    //         p.setAttribute('name', ``)
         // ingredientCostEl. APPEND TO THIS IN THE END
-    }
+    // }
     burgerCostEl.textContent = `$${burgerCost.toFixed(2)}`;
 }
 
