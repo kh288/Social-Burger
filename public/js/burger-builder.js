@@ -210,4 +210,4 @@ const submitBurger = async (event) => {
     }
 };
 
-document.querySelector('submit-burger').addEventListener('click', submitBurger);
+document.querySelector('#submit-burger').addEventListener('click', submitBurger);
