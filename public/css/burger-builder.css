@@ -11,6 +11,17 @@ body{
     
 }
 
+.logo {
+    max-height: 4em;
+}
+
+.burger-card {
+    margin-top: 1rem;
+    background-color: #222;
+    color: #ddd;
+    outline: 4px solid #ddd;
+}
+
 .navbartext{
     font-size: 2.4rem;
     margin-left: 1.9rem;
@@ -33,7 +44,7 @@ body{
 .signup-form,
 .login-form{
     margin-top: 2.5rem;
-    background-color: #101010;;
+    background-color: #101010;
     border-radius: 30px;
     padding: 4.2rem;
     color: #fff;
@@ -60,6 +71,7 @@ body{
     font-family: 'Gloria Hallelujah', cursive;
     
 }
+
 
 .signupBtn,
 .loginBtn{
