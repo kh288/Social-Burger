@@ -15,9 +15,11 @@ Burger.init({
     },
     title: {
         type: DataTypes.STRING,
+        allowNull: false,
     },
     ingredients: {
         type: DataTypes.STRING,
+        allowNull: false,
     },
     date_created: {
         type: DataTypes.DATE,
@@ -26,6 +28,7 @@ Burger.init({
     },
     user_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'user',
             key: 'id',
