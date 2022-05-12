@@ -156,9 +156,9 @@ function generateIngredientButtons() {
         // console.log(ingredients[i].name);
         // Create image to then append to button
         var image = document.createElement('img');
-            image.setAttribute('class', 'card-img-top');
-            image.setAttribute('src', '../public/assets/ingredients/ingredient-' + (i + 1) + '.png');
-            button.appendChild(image);
+        image.setAttribute('class', 'card-img-top');
+        image.setAttribute('src', '/assets/ingredients/ingredient-' + (i + 1) + '.png');
+        button.appendChild(image);
         // Append to HTML buttons
         ingredientsButtons.appendChild(button);
     }
@@ -180,10 +180,10 @@ function appendIngredient(e) {
 
     for (var i = burgerArray.length - 1; i >= 0; i--) {
         var image = document.createElement('img');
-            image.setAttribute('style', `z-index: ${i}; position: relative;`);
-            image.setAttribute('class', 'ingredient p-3');
-            image.setAttribute('src', '../public/assets/ingredients/ingredient-'+ burgerArray[i] +'.png');
-            burger.appendChild(image);
+        image.setAttribute('style', `z-index: ${i}; position: relative;`);
+        image.setAttribute('class', 'ingredient p-3');
+        image.setAttribute('src', '/assets/ingredients/ingredient-' + burgerArray[i] + '.png');
+        burger.appendChild(image);
         burgerGen.appendChild(burger);
     }
 }
@@ -196,18 +196,20 @@ const submitBurger = async (event) => {
 
     const burgerTitle = document.querySelector('#burger-title');
 
+    var cleanBurger = burgerArray.toString();
+
     const response = await fetch('/api/burger', {
         method: 'POST',
         body: JSON.stringify({
             title: burgerTitle.value,
-            ingredients: burgerArray
+            ingredients: cleanBurger
         })
     });
     if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/');
     } else {
         alert('Failed to submit burger');
     }
 };
 
-document.querySelector('#submit-burger').addEventListener('click', submitBurger);
+document.querySelector('#submit-burger').addEventListener('submit', submitBurger);

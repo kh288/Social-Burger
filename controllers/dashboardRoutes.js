@@ -31,8 +31,8 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get('/new', withAuth, (req, res) => {
-    res.render('thiswillbemytemplate', { layout: '', });
+router.get('/create', withAuth, (req, res) => {
+    res.render('create', { layout: 'dashboard', });
 });
 
 
