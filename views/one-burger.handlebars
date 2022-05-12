@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header  flex-row justify-space-between">
             <h2>
-            <a href=''>
+            <a href='/burger/{{burger_id}}'>
                 <div class="col-8">{{burger.title}}</div>
             </a>
             </h2>
@@ -12,13 +12,23 @@
         {{burger.ingredients}}
         </p>
 </div>
-    <input type="hidden" name="post-id" value="{{burger.id}}"/>
-            <div class="card">
+    <input type="hidden"  id="burgerId" name="burger-id" value="{{burger.id}}"/>
+        <div class="card">
             <div class="card-header"></div>
             <form class="card-body" id="new-comment-form">
                 <p class="form-label">Comment:</p>
                 <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
                 <button type="submit" class="btn btn-primary">Submit:</button>
             </form>
-    {{> comments burger.comments}}
-    </div>
+                <div class="comments">
+                {{#each this}}
+                <div>
+                    <p class="card-body">
+                    {{text}} - {{user.username}} {{format_date date_created}}
+                    </p>
+                </div>
+                {{/each}}
+                </div>
+        </div>
+
+    <script src="/js/comment.js"></script>

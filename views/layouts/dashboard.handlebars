@@ -30,7 +30,7 @@
                         <a class="nav-link navbartext" aria-current="page" href="/">World</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active navbartext" aria-current="page" href="/">Create</a>
+                        <a class="nav-link active navbartext" aria-current="page" href="/dashboard/create">Create</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navbartext" href="/dashboard">MyBurgers</a>
@@ -44,49 +44,9 @@
     </nav>
 
 <main>
-    {{body}}
+    {{{body}}}
 </main>
-<div class="container">
-    <div class="row p-3">
-    <!-- CARD -->
-    <form id="submit-burger" class="form-label input-group mb-3">
-            <div class="card col-md-6 burger-card">
-                <h5 class="card-title text-center p-3">Ingredients</h5>
-                <div id="ingredients" class="row p-3">
-                
-                </div>
-            </div>
 
-            <div class="card col-md-6 burger-card">
-                <h5 class="card-title text-center p-3">Burger</h5>
-                
-                <div class="container justify-content-center">
-                    <div id="burger-gen" style="margin-top: 100%;" class="row burger-stack">
-                        
-                    </div>
-                </div>
-            
-            </div>
-            
-            <div class="card burger-card">
-                <h5 class="card-title text-center p-3">Results</h5>
-                
-                    <input id="burger-title" type="text" class="form-control" placeholder="Burger Title" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Button</button>
-                    </div>
-        </form>
-
-        </div>
-    </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="/js/burger-builder.js"></script>
 <script src="/js/logout.js"></script>
     </body>
 </html>
