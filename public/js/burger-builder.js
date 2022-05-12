@@ -126,16 +126,6 @@ const ingredients = [
     }
 ];
 
-// const ingredients = function getIngredients() {
-//     fetch('../public/assets/ingredients-list.json')
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log(data)
-//         return data;
-//     })
-//     .catch(error => console.log(error));
-// }
-
 const ingredientsButtons = document.querySelector('#ingredients');
 const burgerGen = document.querySelector('#burger-gen');
 const burgerArray = [];
@@ -180,7 +170,7 @@ function appendIngredient(e) {
 
     for (var i = burgerArray.length - 1; i >= 0; i--) {
         var image = document.createElement('img');
-        image.setAttribute('style', `z-index: ${i}; position: relative;`);
+        image.setAttribute('style', `z-index: ${i}; position: relative; margin-bottom: ${ingredients[i].botmargin}%`);
         image.setAttribute('class', 'ingredient p-3');
         image.setAttribute('src', '/assets/ingredients/ingredient-' + burgerArray[i] + '.png');
         burger.appendChild(image);
@@ -213,3 +203,4 @@ const submitBurger = async (event) => {
 };
 
 document.querySelector('#submit-burger').addEventListener('submit', submitBurger);
+
