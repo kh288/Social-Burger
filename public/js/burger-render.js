@@ -10,18 +10,23 @@ function getBurgerSection() {
     }
 }
 
-function returnBurgerArray() {
-    let pattern = /^[0-9]+\D+((\d+,?\s?)+).*/g;
+function cleanBurger() {
+    let removeCrap = /^[0-9]+\D+((\d+,?\s?)+).*/g;
+    let removeSpace = /\s/g;
     for(var i = 0; i < getBurgerQuery.length; i++) {
         var str  = getBurgerQuery[i].innerText;
-        const match = str.replace(pattern, "$1");
+        const match = str.replace(removeCrap, '$1');
         let arr = match.split(',');
+        for (var j = 0; j < arr.length; j++) {
+            arr[j] = arr[j].replace(removeSpace, '');
+        }
+        // const cleaned = arr.replace(removeSpace, '');
         burgerArray.push(arr);
     }
     console.log(burgerArray);
 }
 
-console.log(burgerArray);
+// console.log(burgerArray);
 
 function renderBurger() {
 
@@ -31,9 +36,6 @@ function renderBurger() {
     for(var i = 0; i < queryArray.length; i++) {
         var name = '#' + queryArray[i];
         var burgerGen = document.querySelector(name);
-
-        console.log(burgerGen)
-        console.log(queryArray[i])
 
         var burger = document.createElement('div');
             burger.setAttribute('id', `burger-${i}`);
@@ -48,7 +50,6 @@ function renderBurger() {
             image.setAttribute('src',
                 '/assets/ingredients/ingredient-' + burgerArray[i][j] + '.png');
         burger.appendChild(image);
-        console.log(burger);
         burgerGen.appendChild(burger);
         }
         document.querySelector('#delete-me').removeChild()
@@ -56,5 +57,5 @@ function renderBurger() {
 }
 
 getBurgerSection();
-returnBurgerArray();
+cleanBurger();
 renderBurger();
