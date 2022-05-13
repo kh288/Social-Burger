@@ -156,7 +156,8 @@ body{
 .comm-bar{
     width: 40%;
     height: fit-content;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 15px 50px 30px;
 }
 
 .usertitle{
@@ -175,4 +176,23 @@ body{
     border: none;
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.commenter{
+    margin: auto;
+    width: 250%;
+    padding: 15px;
+    border: none;
+}
+
+.usename{
+    margin: auto;
+    width: 250%;
+    padding: 15px;
+    border: none;
+}
+
+.submit-btn{
+    margin-top: 10px;
+    border: none;
 }
