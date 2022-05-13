@@ -183,6 +183,7 @@ body{
     width: 80%;
     padding: 15px;
     border: none;
+    font-family: 'Bree Serif', serif;
 }
 
 .submit-btn{
@@ -195,6 +196,7 @@ body{
     width: 80%;
     padding: 15px;
     border: none;
+    font-family: 'Lora', serif;
 }
 
 .com-date{
