@@ -240,7 +240,7 @@ body{
 /* like button */
 
 .like{
-    margin: 0 0 0 1630px;
+    /* margin: 0 0 0 1630px; */
     padding: 7px 0;
     flex-direction: column;
 }

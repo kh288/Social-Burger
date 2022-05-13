@@ -25,7 +25,7 @@
         "user_id": 5
     },
     {
-        "title": "Herbs N Burger  ",
+        "title": "Herbs N Burger",
         "ingredients": "1,9,5,23",
         "user_id": 6
     },
@@ -41,8 +41,8 @@
     },
     {
         "title": "Burger Fortress",
-        "ingredients": "1,15,1,2,4,12,23",
-        "user_id": 9
+        "ingredients": "1,15,1,2,4,12,23",  
+          "user_id": 9
     },
     {
         "title": "Beast Burger",
