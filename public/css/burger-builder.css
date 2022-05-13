@@ -178,21 +178,28 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.commenter{
-    margin: auto;
-    width: 250%;
-    padding: 15px;
-    border: none;
-}
-
 .usename{
     margin: auto;
-    width: 250%;
+    width: 80%;
     padding: 15px;
     border: none;
 }
 
 .submit-btn{
     margin-top: 10px;
+    border: none;
+}
+
+.com-text{
+    margin: auto;
+    width: 80%;
+    padding: 15px;
+    border: none;
+}
+
+.com-date{
+    margin: auto;
+    width: 80%;
+    padding: 15px;
     border: none;
 }
