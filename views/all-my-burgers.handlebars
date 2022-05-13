@@ -1,7 +1,7 @@
 <h2 class="welcome">Welcome {{user.username}}! </h2>
 <div class="container">
   {{#if burgers.length}}
-    <div class="row">
+    <div class="row" data-aos="fade-up">
         {{#each burgers as |burger|}}
         <div class="card col-sm-3 burgerCardContainer myburgerCard">
         <div class="card-header">
