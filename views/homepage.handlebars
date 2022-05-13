@@ -1,35 +1,48 @@
 <div class="container">
     <div class="row">
-            {{#each burgers as |burger|}}
-            <div class="card col-sm-3 burgerCardContainer">
-                            <!-- BURGER -->
-                            
-                        <div class="card-header">
-                            <h6><a  class="homepageBurger" href="/burger/{{burger.id}}">{{burger.title}}</a></h6>
-                        </div>    
-                <div class="container">
-                    <div style="margin-top: 100%;" class="row burger-stack">
-                        
-                        <div class="card-header burgerImg" data-aos="fade-down" data-aos-delay="50">
-                            <img style="z-index: 4; max-width: 100%; margin-top: -100%; position: relative;"
-                                            class="ingredient card-img-top" src="/assets/ingredients/ingredient-23.png">
-                            <img style="z-index: 3; max-width: 100%; margin-top: -100%; position: relative;"
-                                            class="ingredient card-img-top" src="/assets/ingredients/ingredient-7.png">
-                            <img style="z-index: 2; max-width: 100%; margin-top: -80%; position: relative;"
-                                            class="ingredient card-img-top" src="/assets/ingredients/ingredient-10.png">
-                            <img style="z-index: 1; max-width: 100%; margin-top: -60%; position: relative;"
-                                            class="ingredient card-img-top" src="/assets/ingredients/ingredient-1.png">
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-text textBurger">by <span class="author">{{user.username}}</span> on: {{format_date date_created}} </p>
-                        </div>
+        {{#each burgers as |burger|}}
+        <div class="card col-sm-3 burgerCardContainer">
+        <!-- BURGER -->
+
+        <div class="card-header">
+            <h6><a  class="homepageBurger" href="/burger/{{burger.id}}">{{burger.title}}</a></h6>
+            </div>    
+            <div class="container">
+                <div style="margin-top: 100%;" class="row burger-stack">
+                    {{!-- <div id="burger-{{burger.id}}" class="card-header burgerImg">
+                        {{burger.ingredients}}
+                    </div> --}}
+                    {{!-- {{seperate_burger burger.ingredients}} --}}
+
+                    {{> burger-render burger}}
+
+                    {{!-- {{#each ingredients as |ingredient|}}
+                        <img 
+                            style="max-width: 100%; margin-top: -100%; position: relative;"
+                            class="ingredient card-img-top"
+                            src="/assets/ingredients/ingredient-{{ingredient}}.png">
+                    {{/each}} --}}
+
+                    <div class="card-footer">
+                        <p class="card-text textBurger">by <span class="author">{{user.username}}</span> on: {{format_date date_created}} </p>
                     </div>
                     {{#each burger.ingredients}}
                     <li>{{this}}</li>
                     {{/each}}
                 </div>
             </div>
-            {{/each}}
-        </div> 
-    </div>
-</div>    
+        </div>
+        {{/each}}
+        {{!-- <script src="/js/burger-render.js"></script> --}}
+    </div> 
+</div>
+
+
+{{!-- z-index: {{burger.ingredients}};  --}}
+
+{{!-- {{#each burger.ingredients as |ingredient|}}
+<img 
+style="max-width: 100%; margin-top: -100%; position: relative;"
+class="ingredient card-img-top"
+src="/assets/ingredients/ingredient-{{ingredient}}.png">
+{{/each}} --}}

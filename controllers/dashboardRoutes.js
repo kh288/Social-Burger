@@ -16,27 +16,28 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/edit/:id', withAuth, async (req, res) => {
-    try {
-        const burgerData = await Post.findByPk(req.params.id);
-        if (burgerData) {
-            const burgers = burgerData.get({ plain: true });
-            console.log(burgers);
-            res.render('edit-burger', { layout: 'dashboard', burgers, });
-        } else {
-            res.status(400).end();
-        }
-    } catch (err) {
-        res.redirect('login');
-    }
-});
+// router.get('/edit/:id', withAuth, async (req, res) => {
+//     try {
+//         const burgerData = await Post.findByPk(req.params.id);
+//         if (burgerData) {
+//             const burgers = burgerData.get({ plain: true });
+//             console.log(burgers);
+//             res.render('edit-burger', { layout: 'dashboard', burgers, });
+//         } else {
+//             res.status(400).end();
+//         }
+//     } catch (err) {
+//         console.log(err.message);
+
+//     }
+// });
 
 router.get('/create', withAuth, (req, res) => {
     res.render('create', { layout: 'dashboard', });
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
+    Burger.findOne({
         where: {
             id: req.params.id
         },
