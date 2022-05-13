@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Burger extends Model {}
+class Burger extends Model { }
 // Burger model
 // ingredients key works like this:
 // [23,10,1]
@@ -34,7 +34,7 @@ Burger.init({
             key: 'id',
         },
     },
-},{
+}, {
     sequelize,
     timestamps: false,
     freezeTableName: true,
