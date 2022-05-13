@@ -182,8 +182,11 @@ body{
     margin: auto;
     width: 80%;
     padding: 15px;
-    border: none;
+    border: solid #222 1px;
+    border-radius: 8px;
     font-family: 'Bree Serif', serif;
+    background-color: #222;
+    color: #fff;
 }
 
 .submit-btn{
@@ -195,7 +198,8 @@ body{
     margin: auto;
     width: 80%;
     padding: 15px;
-    border: none;
+    border: solid #222 2px;
+    border-radius: 5px;
     font-family: 'Lora', serif;
 }
 
@@ -223,13 +227,21 @@ body{
 }
 
 /* like button */
+
+.like{
+    margin: 0 0 0 1630px;
+    padding: 7px 0;
+    flex-direction: column;
+}
+
 .like-btn{
     margin: 0;
     padding: 0;
-    width: 3%;
-    height: 20px;
+    width: 25%;
+    height: 25px;
     box-sizing: border-box;
-    background: red;
+    background: rgb(232, 38, 38);
+    color: #fff;
     border: black 3px;
     border-radius: 3px;
     cursor: pointer;
