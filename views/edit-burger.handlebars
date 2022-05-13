@@ -4,14 +4,14 @@
     <div class="col-md-4">
       <img src="/assets/logo.png" class="img-fluid rounded-start" alt="...">
     </div>
-    <div class="col-md-8 deleteForm">
+    <form class="col-md-8 deleteForm">
       <div class="card-body cardDelete">
         <h5 class="card-title burgerTitleCard">{{burgers.title}}</h5>
-        <input class="burgerInput" type="hidden" name="burgerInput" value={{{burger.user_id}}}>
-        <button type="button" class="btn btn-danger btn-lg deleteBtn" data-id="{{burgers.burger_id}}">DELETE</button>
+        <input class="burgerInput" type="hidden" name="burgerInput" >
+        <button type="submit" class="btn btn-danger btn-lg deleteBtn" value="{{burgers.id}}">DELETE</button>
        <p class="card-text burgersubCard">sad to see you go :( </p>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
