@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-        const [oldBurger] = await Burger.destroy({
+        const oldBurger = await Burger.destroy({
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id
