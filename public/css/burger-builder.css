@@ -221,3 +221,16 @@ body{
     padding: 70px 0;
     border: none;
 }
+
+/* like button */
+.like-btn{
+    margin: 0;
+    padding: 0;
+    width: 3%;
+    height: 20px;
+    box-sizing: border-box;
+    background: red;
+    border: black 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
