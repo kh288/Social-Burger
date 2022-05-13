@@ -16,6 +16,9 @@ Burger.init({
     title: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+            isAlpha: true,
+        }
     },
     ingredients: {
         type: DataTypes.STRING,
