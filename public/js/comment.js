@@ -24,7 +24,6 @@ const commentFormHandler = async (event) => {
     }
 };
 
-
 document
     .querySelector('.commentForm')
     .addEventListener('submit', commentFormHandler);
