@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-auto">
     {{!-- this can not be displayed somehow --}}
-  <h2>Welcome! </h2>
+  <h2 class="welcome">Welcome! </h2>
   </div>
 </div>
 <br>
 {{#if burgers.length}}
-<div class="card flex-column">
+<div class="card flex-column my-burgers">
   {{#each burgers as |burger|}}
   {{> edit-burger burger}}
   {{/each}}
