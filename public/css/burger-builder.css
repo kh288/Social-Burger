@@ -252,8 +252,8 @@ body{
 .burgerCardContainer{
     transition: transform 300ms;
     border: 1px solid;
-  padding: 10px;
-  box-shadow: 5px 10px #222222;
+    padding: 10px;
+    box-shadow: 5px 10px #222222;
 }
 .burgerCardContainer:hover{
     transform: translateY(-5px);
@@ -266,4 +266,34 @@ body{
     color: #fff;
     text-decoration:none;
     border-radius: 8px;
+}
+.deleteBtn{
+justify-content: center;
+align-items: center;
+}
+.cardDelete{
+margin-left: 5rem;
+}
+
+.cardDeleteContainer{
+    margin-top: 32px;
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 300ms;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #222222;
+    outline: 3px solid #ddd;
+}
+.burgersubCard{
+    margin-top: 10px;
+    color: #fff;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.burgerTitleCard{
+    font-size: 2rem;
+    color: #fff;
+    font-family: 'Gloria Hallelujah', cursive;
 }
