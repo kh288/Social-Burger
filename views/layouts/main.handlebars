@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Gloria+Hallelujah&family=Roboto&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="/css/burger-builder.css">
     <title>Social Burger</title>
 </head>
@@ -55,5 +56,12 @@
 {{#if logged_in}}
 <script src="/js/logout.js"></script>
 {{/if}}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        offset: 200,
+        duration: 500
+    });
+  </script>
     </body>
 </html>

@@ -1,9 +1,44 @@
 <div class="card-body">
-  <a href="dashboard/edit/{{id}}">
+  <a href="/dashboard/edit/{{id}}">
     <div class="card-header flex-row justify-space-between">
       <div class="col-8">Post Title: {{title}}</div>
-      <div class="col-4">posted by {{user.username}} on {{format_date date_created}}</div>
+      <div class="col-4">posted by {{user.username}} {{format_date date_created}}</div>
+    {{ingredients}}
+    {{id}}
     </div>  
   </a>
 
 </div>
+
+
+{{!-- <div class="container">
+    <div class="row">
+            <div class="card col-sm-3 burgerCardContainer">
+                            <!-- BURGER -->
+                            
+                        <div class="card-header">
+                            <h6><a  class="homepageBurger" href="dashboard/edit/{{id}}">{{title}}</a></h6>
+                        </div>    
+                <div class="container">
+                    <div style="margin-top: 100%;" class="row burger-stack">
+                        
+                        <div class="card-header burgerImg">
+                            <img style="z-index: 4; max-width: 100%; margin-top: -100%; position: relative;"
+                                            class="ingredient card-img-top" src="/assets/ingredients/ingredient-23.png">
+                            <img style="z-index: 3; max-width: 100%; margin-top: -100%; position: relative;"
+                                            class="ingredient card-img-top" src="/assets/ingredients/ingredient-7.png">
+                            <img style="z-index: 2; max-width: 100%; margin-top: -80%; position: relative;"
+                                            class="ingredient card-img-top" src="/assets/ingredients/ingredient-10.png">
+                            <img style="z-index: 1; max-width: 100%; margin-top: -60%; position: relative;"
+                                            class="ingredient card-img-top" src="/assets/ingredients/ingredient-1.png">
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text textBurger">by <span class="author">{{user.username}}</span> on: {{format_date date_created}} </p>
+                        </div>
+                    </div>
+                    {{ingredients}}
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>     --}}

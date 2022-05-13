@@ -1,29 +1,32 @@
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lora:ital,wght@1,500&family=Playfair+Display+SC:ital,wght@1,700&display=swap" rel="stylesheet">
 
 
 <div class="card">
     <div class="card-header  flex-row justify-space-between">
             <h2>
-            <a href='/burger/{{burger_id}}'>
-                <div class="col-8">{{burger.title}}</div>
+            {{!-- <a href='/burger/{{burger_id}}'> --}}
+                <div class="col-8 usertitle">{{burger.title}}</div>
             </a>
             </h2>
-            <div class="col-3">posted by {{burger.user.username}} on {{format_date burger.date_created}}
+            <div class="col-3 burgerinfo">posted by {{burger.user.username}} on {{format_date burger.date_created}}
             </div>
     </div>  
-        <p class="card-body">
+        <p class="card-body burgerCardContainer textBurger homepageBurger">
         {{burger.ingredients}}
         </p>
 </div>
         <div class="card">
-            <input class="burgerId-input" type="hidden" name="burgerId-input" value="{{burger.user_id}}"/>
-            <div class="card-header"></div>
-            <form class="card-body commentForm">
+            <input class="burgerId-input"  type="hidden" name="burgerId-input" value="{{burger.user_id}}"/>
+            {{!-- <div class="card-header"></div> --}}
+            <form class="card-body commentForm text-center">
                 {{!-- <label for="burger_id" class="form-label"></label> --}}
                 {{!-- <input type="text"  class="burgerId-input" value="{{burger.burger_id}}"/> --}}
                 <label for="comment" class="form-label"></label>
-                <input type="text" class="form-input comment-input">
-                <button type="submit" class="btn btn-primary signupBtn">submit</button>
+                <input type="text" class="form-input comment-input comm-bar">
+                </br>
+                <button type="submit" class="btn btn-danger submit-btn">Submit</button>
             
         
             </form>

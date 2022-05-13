@@ -1,12 +1,47 @@
 [
     {
-        "title": "My first cheese burger!",
+        "title": "Burger N Bite  ",
         "ingredients": "23, 10, 1",
         "user_id": 1
     },
     {
-        "title": "Walter's burger!",
+        "title": "For Christ sake!",
         "ingredients": "4, 15, 1",
         "user_id": 2
+    },
+    {
+        "title": "The Grill Thrill",
+        "ingredients": "4, 15, 1",
+        "user_id": 3
+    },
+    {
+        "title": "The Beef Lane",
+        "ingredients": "4, 15, 1",
+        "user_id": 4
+    },
+    {
+        "title": "Bayview Burger",
+        "ingredients": "4, 15, 1",
+        "user_id": 5
+    },
+    {
+        "title": "Herbs N Burger  ",
+        "ingredients": "4, 15, 1",
+        "user_id": 6
+    },
+    {
+        "title": "8th Block Burger",
+        "ingredients": "4, 15, 1",
+        "user_id": 7
+    },
+    {
+        "title": "Bazooka Burger",
+        "ingredients": "4, 15, 1",
+        "user_id": 8
+    },
+    {
+        "title": "Burger Fortress",
+        "ingredients": "4, 15, 1",
+        "user_id": 9
     }
 ]
