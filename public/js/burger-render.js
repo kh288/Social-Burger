@@ -18,6 +18,7 @@ function returnBurgerArray() {
         let arr = match.split(',');
         burgerArray.push(arr);
     }
+    console.log(burgerArray);
 }
 
 console.log(burgerArray);
@@ -28,8 +29,12 @@ function renderBurger() {
     // queryArray[0]
     
     for(var i = 0; i < queryArray.length; i++) {
-        var burgerGen = document.querySelector('#'+'queryArray[i]');
+        var name = '#' + queryArray[i];
+        var burgerGen = document.querySelector(name);
+
+        console.log(burgerGen)
         console.log(queryArray[i])
+
         var burger = document.createElement('div');
             burger.setAttribute('id', `burger-${i}`);
 
@@ -41,15 +46,15 @@ function renderBurger() {
             image.setAttribute('class',
                 'ingredient p-3');
             image.setAttribute('src',
-                '/assets/ingredients/ingredient-' + burgerArray[0][0] + '.png');
+                '/assets/ingredients/ingredient-' + burgerArray[i][j] + '.png');
         burger.appendChild(image);
+        console.log(burger);
         burgerGen.appendChild(burger);
         }
+        document.querySelector('#delete-me').removeChild()
     }
-    document.querySelector('#delete-me').removeChild()
 }
 
 getBurgerSection();
 returnBurgerArray();
-
 renderBurger();
