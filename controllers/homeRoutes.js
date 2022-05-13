@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { User, Burger, Comment } = require('../models');
+const { User, Burger, Comment, Ingredient } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -12,7 +12,11 @@ router.get('/', async (req, res) => {
                 {
                     model: Comment,
                     include: User,
-                }
+                },
+                {
+                    model: Ingredient,
+                    include: Burger,
+                },
             ],
         });
         const burgers = burgerData.map((burger) => burger.get({ plain: true }));

@@ -17,10 +17,10 @@ Burger.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    ingredients: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
+    // ingredients: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // },
     date_created: {
         type: DataTypes.DATE,
         allowNull: false,

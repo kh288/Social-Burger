@@ -210,10 +210,10 @@ const submitBurger = async (event) => {
     var cleanBurger = burgerArray.toString();
 
     const response = await fetch('/api/burger', {
-        method: 'GET',
+        method: 'POST',
         body: JSON.stringify({
             title: burgerTitle,
-            ingredients: cleanBurger
+            ingredients: cleanBurger,
         }),
         headers: { 'Content-Type': 'application/json' },
     });
