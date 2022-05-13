@@ -1,17 +1,17 @@
 [
     {
         "title": "Burger N Bite",
-        "ingredients": "23,10,1",
+        "ingredients": "1,10,23",
         "user_id": 1
     },
     {
         "title": "For Christ sake",
-        "ingredients": "4,12,1",
+        "ingredients": "1,4,12,23",
         "user_id": 2
     },
     {
         "title": "The Grill Thrill",
-        "ingredients": "4,3,23",
+        "ingredients": "1,4,3,23",
         "user_id": 3
     },
     {
@@ -26,22 +26,22 @@
     },
     {
         "title": "Herbs N Burger  ",
-        "ingredients": "4,15,23",
+        "ingredients": "1,4,15,23",
         "user_id": 6
     },
     {
         "title": "Block Burger",
-        "ingredients": "4,15,1",
+        "ingredients": "1,4,15,23",
         "user_id": 7
     },
     {
         "title": "Bazooka Burger",
-        "ingredients": "4,15,1",
+        "ingredients": "1,4,15,1,23",
         "user_id": 8
     },
     {
         "title": "Burger Fortress",
-        "ingredients": "4,15,1,2,4,12,23",
+        "ingredients": "1,4,15,1,2,4,12,23",
         "user_id": 9
     }
 ]
