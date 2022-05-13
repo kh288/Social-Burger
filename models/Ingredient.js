@@ -1,36 +1,28 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Burger extends Model {}
-// Burger model
-// ingredients key works like this:
-// [23,10,1]
-// [0, 1, 2] represents the z element
-Burger.init({
+class Ingredient extends Model {}
+
+Ingredient.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
-    title: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    // ingredients: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    // },
-    date_created: {
-        type: DataTypes.DATE,
+    cost: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: DataTypes.NOW,
     },
-    user_id: {
+    burger_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'user',
+            model: 'burger',
             key: 'id',
         },
     },
@@ -39,8 +31,8 @@ Burger.init({
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'burger',
+    modelName: 'ingredient',
 });
 
-module.exports = Burger;
+module.exports = Ingredient;
 

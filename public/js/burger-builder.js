@@ -213,7 +213,7 @@ const submitBurger = async (event) => {
         method: 'POST',
         body: JSON.stringify({
             title: burgerTitle,
-            ingredients: cleanBurger
+            ingredients: cleanBurger,
         }),
         headers: { 'Content-Type': 'application/json' },
     });
