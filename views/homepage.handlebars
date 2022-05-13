@@ -10,7 +10,7 @@
                 <div class="container">
                     <div style="margin-top: 100%;" class="row burger-stack">
                         
-                        <div class="card-header burgerImg">
+                        <div class="card-header burgerImg" data-aos="fade-down" data-aos-delay="50">
                             <img style="z-index: 4; max-width: 100%; margin-top: -100%; position: relative;"
                                             class="ingredient card-img-top" src="/assets/ingredients/ingredient-23.png">
                             <img style="z-index: 3; max-width: 100%; margin-top: -100%; position: relative;"
@@ -24,6 +24,9 @@
                             <p class="card-text textBurger">by <span class="author">{{user.username}}</span> on: {{format_date date_created}} </p>
                         </div>
                     </div>
+                    {{#each burger.ingredients}}
+                    <li>{{this}}</li>
+                    {{/each}}
                 </div>
             </div>
             {{/each}}

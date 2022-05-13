@@ -1,10 +1,38 @@
 [
     {
-        "username": "kevin",
+        "username": "Kevin",
         "password": "password"
     },
     {
-        "username": "walter",
+        "username": "GordonRamsey",
+        "password": "password"
+    },
+    {
+        "username": "Caitlin",
+        "password": "password"
+    },
+    {
+        "username": "Ruggedman",
+        "password": "password"
+    },
+    {
+        "username": "Princecharming",
+        "password": "password"
+    },
+    {
+        "username": "Dragonlord",
+        "password": "password"
+    },
+    {
+        "username": "Kingslayer",
+        "password": "password"
+    },
+    {
+        "username": "Savageheart",
+        "password": "password"
+    },
+    {
+        "username": "Masterchief",
         "password": "password"
     }
 ]
