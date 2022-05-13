@@ -312,3 +312,7 @@ margin-left: 5rem;
     color: #fff;
     font-family: 'Gloria Hallelujah', cursive;
 }
+
+cardDeleteContainer:hover{
+    transform: translateY(-5px);
+}
