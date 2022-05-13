@@ -113,6 +113,8 @@ body{
 }
 .burgerCardContainer{
     margin:30px; 
+    margin-top: 50%;
+    max-width: 50%;
     justify-content: center;
     align-items: center;
     background-color: #222222;

@@ -12,10 +12,18 @@
             </h2>
             <div class="col-3 burgerinfo">posted by {{burger.user.username}} on {{format_date burger.date_created}}
             </div>
-    </div>  
-        <p class="card-body burgerCardContainer textBurger homepageBurger">
-        {{burger.ingredients}}
-        </p>
+    </div> 
+
+    <div class="card-body burgerCardContainer textBurger homepageBurger">
+        <section id="burger-generate-{{burger.id}}" class="burger-render">
+            <article class="text-white">
+                <p class="delete-me">
+                {{burger.ingredients}}
+                </p>
+            </article>
+        </section>
+    </div>
+
 </div>
         <div class="card">
             <input class="burgerId-input"  type="hidden" name="burgerId-input" value="{{burger.user_id}}"/>
@@ -45,3 +53,4 @@
         
 
     <script src="/js/comment.js"></script>
+    <script src="/js/burger-render.js"></script>

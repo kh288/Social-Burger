@@ -223,7 +223,7 @@ const submitBurger = async (event) => {
     } else {
         console.log(`Title: Sent typeof: ${typeof burgerTitle.value}: ${burgerTitle.value}`);
         console.log(`Burger: Sent typeof: ${typeof cleanBurger}: ${cleanBurger}`);
-        alert('Failed to submit burger');
+        alert('Failed to submit burger, only Alphabetical');
     }
 };
 
