@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <div class="comments">
   {{#each this}}
   <div class="card-body2 commenter">
@@ -5,7 +6,15 @@
       <h5 class="card-header usename">{{user.username}}</h5>
       <p class="card-text com-text">{{text}} </p>
       <h6 class="card-text mb-2 text-muted text-end com-date">{{format_date date_created}} </h6>
+    <div class="like"> 
+      <button class="like-btn">
+        <span id="icon"><i class="fa fa-thumbs-o-up"></i></span>
+        <span id="count">0</span> Like
+    </div>    
+    </button>
     {{!-- </p> --}}
   </div>
   {{/each}}
 </div>
+
+  <script src="/js/like.js"></script>
