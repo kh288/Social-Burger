@@ -13,8 +13,9 @@
                         {{burger.ingredients}}
                     </div> --}}
                     {{!-- {{seperate_burger burger.ingredients}} --}}
-
+                    <section id="{{burger.id}}-burger" class="burger-render">
                     {{> burger-render burger}}
+                    </section>
 
                     {{!-- {{#each ingredients as |ingredient|}}
                         <img 
@@ -30,8 +31,8 @@
             </div>
         </div>
         {{/each}}
-        {{!-- <script src="/js/burger-render.js"></script> --}}
     </div> 
+    <script src="/js/burger-render.js"></script>
 </div>
 
 
