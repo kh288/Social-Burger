@@ -25,9 +25,9 @@ function returnBurgerArray() {
         // });
         // burger[2] is ACTUAL burger ID in SQL DB
         // let str = burgerArray[9];
-
+        var str = burger;
         let pattern = /^[0-9]+\D+((\d+,?\s?)+).*/g;
-        const match = burger.replace(pattern, "$1");
+        const match = str.replace(pattern, "$1");
         let arr = match.split(',');
         burgerArray.push(arr);
 
@@ -46,7 +46,7 @@ function returnBurgerArray() {
 
 returnBurgerArray();
 
-// console.log(burgerArray);
+console.log(burgerArray);
 
 // for (var i = 0; i < burgerArray[0]; i++) {
 //     if (burgerArray[i].includes(',')){
@@ -54,7 +54,6 @@ returnBurgerArray();
 //     }
 // }
 
-// console.log(burgerArray[0].replace('^[0-9]+\D+((\d+,?\s?)+).*'));
 let str = burgerArray[9];
 let pattern = /^[0-9]+\D+((\d+,?\s?)+).*/g;
 
