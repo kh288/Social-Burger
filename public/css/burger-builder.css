@@ -271,6 +271,11 @@ body{
 justify-content: center;
 align-items: center;
 }
+
+.deleteBtn:hover{
+    text-decoration: line-through;
+}
+
 .cardDelete{
 margin-left: 5rem;
 }
