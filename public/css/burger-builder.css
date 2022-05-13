@@ -152,7 +152,10 @@ body{
     margin-top: -100%;
     position: relative;
 }
-
+/* .burger-render {
+    margin-top: 25%;
+    max-width: 65%;
+} */
 /* .ingredient img {
     max-width: 100%;
     margin-top: -100%;
