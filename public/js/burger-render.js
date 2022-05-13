@@ -1,6 +1,7 @@
 // const rawInput = document.querySelector('.burger-render');
 let getBurgerQuery;
 let queryArray = [];
+// const burgerArray = [];
 
 function getBurgerSection() {
     getBurgerQuery = document.getElementsByTagName('section');
@@ -11,44 +12,35 @@ function getBurgerSection() {
         queryArray.push(getBurgerQuery[i].attributes.id.value);
     }
 }
-
-
 getBurgerSection();
-// how to get the name of the id
-// console.log(getBurgerQuery[0].attributes[0].nodeValue);
+let burger = getBurgerQuery[1].innerHTML.split(' ').join('\n').split('\n');
+burger = burger.filter(function(space) {
+    return space.trim() != '';
+});
 
+console.log(burger);
 function renderBurger() {
-    // const burgerGen = rawInput.split(" ");
-    // const generated = burgerGen.filter(function(space) {
-    //     return space.trim() != '';
-    // });
-    // console.log(rawInput);
-    // console.log(burgerGen[2]);
-
-    // for(var i = 0; i < burgerGen.length; i++) {
-
-    // }
     
-    // const burgerArray = burgerArray.ingredients.split(',');
+    burgerArray = getBurgerQuery[1].innerHTML.split(',');
 
-    // console.log('Created burgerArray: ' + burgerArray);
-    // console.log('Created burgerId: ' + burgerId);
+    console.log('Created burgerArray: ' + burgerArray);
+    console.log('Created burgerId: ' + burgerId);
 
-    // var burger = document.createElement('div');
-    //     burger.setAttribute('id', `${burgerId}`);
+    var burger = document.createElement('div');
+        burger.setAttribute('id', `${burgerId}`);
 
-    // for (var i = burgerArray.length - 1; i >= 0; i--) {
-    // var image = document.createElement('img');
-    //     image.setAttribute('style',
-    //         `z-index: ${i};
-    //         position: relative;`);
-    //     image.setAttribute('class',
-    //         'ingredient p-3');
-    //     image.setAttribute('src',
-    //         '/assets/ingredients/ingredient-' + burgerArray[i] + '.png');
-    // burger.appendChild(image);
-    // burgerGen.appendChild(burger);
-    // }
+    for (var i = burgerArray.length - 1; i >= 0; i--) {
+    var image = document.createElement('img');
+        image.setAttribute('style',
+            `z-index: ${i};
+            position: relative;`);
+        image.setAttribute('class',
+            'ingredient p-3');
+        image.setAttribute('src',
+            '/assets/ingredients/ingredient-' + burgerArray[i] + '.png');
+    burger.appendChild(image);
+    burgerGen.appendChild(burger);
+    }
 }
 
 // renderBurger();
