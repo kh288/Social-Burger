@@ -14,7 +14,14 @@
                     </div> --}}
                     {{!-- {{seperate_burger burger.ingredients}} --}}
                     <section id="burger-generate-{{burger.id}}" class="burger-render">
-                    {{> burger-render burger}}
+
+                    <article class="text-white">
+                        <p class="delete-me">
+                            {{burger.ingredients}}
+                        </p>
+                    </article>
+
+                    {{!-- {{> burger-render burger}} --}}
                     </section>
 
                     {{!-- {{#each ingredients as |ingredient|}}
