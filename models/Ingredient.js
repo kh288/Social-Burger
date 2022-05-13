@@ -34,5 +34,5 @@ Ingredient.init({
     modelName: 'ingredient',
 });
 
-module.exports = Ingredient;
+// module.exports = Ingredient;
 

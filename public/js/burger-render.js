@@ -2,7 +2,7 @@
 let getBurgerQuery;
 let queryArray = [];
 let burgerArray = [];
-
+console.log("FILE IS WORKING");
 function getBurgerSection() {
     getBurgerQuery = document.getElementsByTagName('section');
     // getBurgerQuery[0].attributes.id.value = id="1-burger"
@@ -17,15 +17,6 @@ function getBurgerSection() {
 getBurgerSection();
 
 function returnBurgerArray() {
-    // var burger;
-    const response = await fetch('/', {
-        method: 'GET',
-        
-        headers: { 'Content-Type': 'application/json' },
-    });
-
-    // console.log(response);
-    // console.log(burger);
     // .split(' ').join('\n').split('\n')
     for(var i = 0; i < getBurgerQuery.length; i++) {
         var burger = getBurgerQuery[i].innerText;
@@ -33,9 +24,14 @@ function returnBurgerArray() {
         //     return space.trim() != '';
         // });
         // burger[2] is ACTUAL burger ID in SQL DB
-        burgerArray.push(burger);
+        // let str = burgerArray[9];
 
-        burgerArray[i] = burgerArray[i].split(' ');
+        let pattern = /^[0-9]+\D+((\d+,?\s?)+).*/g;
+        const match = burger.replace(pattern, "$1");
+        let arr = match.split(',');
+        burgerArray.push(arr);
+
+        // burgerArray[i] = burgerArray[i].split(' ');
         // if (burgerArray[j].includes(',')) {
         //     burgerArray[j].pop();
         // }
@@ -50,7 +46,22 @@ function returnBurgerArray() {
 
 returnBurgerArray();
 
-console.log(burgerArray);
+// console.log(burgerArray);
+
+// for (var i = 0; i < burgerArray[0]; i++) {
+//     if (burgerArray[i].includes(',')){
+//         console.log(burgerArray[i]);
+//     }
+// }
+
+// console.log(burgerArray[0].replace('^[0-9]+\D+((\d+,?\s?)+).*'));
+let str = burgerArray[9];
+let pattern = /^[0-9]+\D+((\d+,?\s?)+).*/g;
+
+const match = str.replace(pattern, "$1");
+let arr = match.split(',');
+console.log(arr);
+// console.log(burgerArray);
 
 function renderBurger() {
     burgerArray = getBurgerQuery[1].innerText.split(',');
