@@ -9,27 +9,14 @@
             </div>    
             <div class="container">
                 <div style="margin-top: 100%;" class="row burger-stack">
-                    {{!-- <div id="burger-{{burger.id}}" class="card-header burgerImg">
-                        {{burger.ingredients}}
-                    </div> --}}
-                    {{!-- {{seperate_burger burger.ingredients}} --}}
+
                     <section id="burger-generate-{{burger.id}}" class="burger-render">
-
-                    <article class="text-white">
-                        <p class="delete-me">
-                            {{burger.ingredients}}
-                        </p>
-                    </article>
-
-                    {{!-- {{> burger-render burger}} --}}
+                        <article class="text-white">
+                            <p class="delete-me">
+                                {{burger.ingredients}}
+                            </p>
+                        </article>
                     </section>
-
-                    {{!-- {{#each ingredients as |ingredient|}}
-                        <img 
-                            style="max-width: 100%; margin-top: -100%; position: relative;"
-                            class="ingredient card-img-top"
-                            src="/assets/ingredients/ingredient-{{ingredient}}.png">
-                    {{/each}} --}}
 
                     <div class="card-footer">
                         <p class="card-text textBurger">by <span class="author">{{user.username}}</span> on: {{format_date date_created}} </p>
