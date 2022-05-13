@@ -1,10 +1,14 @@
 function renderBurger() {
-    const burgerGen = document.querySelector('#burger-gen');
-    const burgerArray = burgerSQL.ingredients.split(',');
+    const burgerGen = document.querySelector('');
+    const burgerId = document.querySelector('.burger-id');
+
+    const burgerArray = burgerArray.ingredients.split(',');
+
     console.log('Created burgerArray: ' + burgerArray);
+    console.log('Created burgerId: ' + burgerId);
 
     var burger = document.createElement('div');
-        burger.setAttribute('id', `${burgerSQL.id}`);
+        burger.setAttribute('id', `${burgerId}`);
 
     for (var i = burgerArray.length - 1; i >= 0; i--) {
     var image = document.createElement('img');
