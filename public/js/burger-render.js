@@ -11,7 +11,7 @@ function getBurgerSection() {
         queryArray.push(getBurgerQuery[i].attributes.id.value);
     }
 }
-
+console.log(queryArray)
 function cleanBurger() {
     // let removeCrap = /^[0-9]+\D+((\d+,?\s?)+).*/g;
     // let removeSpace = /\s/g;
@@ -24,10 +24,10 @@ function cleanBurger() {
         // }
         burgerArray.push(arr);
     }
-    console.log(burgerArray);
+    // console.log(burgerArray);
 }
 
-console.log(burgerArray);
+// console.log(burgerArray);
 
 function renderBurger() {
 
@@ -41,7 +41,7 @@ function renderBurger() {
         var burger = document.createElement('div');
             burger.setAttribute('id', `burger-${i}`);
 
-        for (var j = burgerArray.length - 1; j >= 0; j--) {
+        for (var j = burgerArray[i].length - 1; j >= 0; j--) {
         var image = document.createElement('img');
             image.setAttribute('style',
                 `z-index: ${j};
@@ -49,7 +49,7 @@ function renderBurger() {
             image.setAttribute('class',
                 'ingredient p-3');
             // if (burgerArray[i][j]){
-                
+                console.log(burgerArray)
                 image.setAttribute('src',
                     '/assets/ingredients/ingredient-' + burgerArray[i][j] + '.png');
             // }
