@@ -212,3 +212,11 @@ body{
     /* font-family: 'Amatic SC', cursive; */
     font-family: 'Gloria Hallelujah', cursive;
 }
+
+.my-burgers{
+    margin: auto;
+    width: 80%;
+    padding: 70px 0;
+    border: none;
+    
+}
