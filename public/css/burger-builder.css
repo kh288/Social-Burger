@@ -106,10 +106,10 @@ body{
 
 
 .container{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 .burgerCardContainer{
     margin:30px; 
@@ -212,11 +212,12 @@ body{
 
 .welcome{
     color: #fff;
-    font-size: 5rem;
+    font-size: 3rem;
     color: white;
     text-shadow: 0 0 3px grey;
     /* font-family: 'Amatic SC', cursive; */
     font-family: 'Gloria Hallelujah', cursive;
+    margin: 1.6rem;
 }
 
 .my-burgers{
@@ -246,4 +247,23 @@ body{
     border: black 3px;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.burgerCardContainer{
+    transition: transform 300ms;
+    border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #222222;
+}
+.burgerCardContainer:hover{
+    transform: translateY(-5px);
+    
+}
+
+.editBTN{
+    background-color:rgb(232, 38, 38); 
+    padding: 4px;
+    color: #fff;
+    text-decoration:none;
+    border-radius: 8px;
 }
