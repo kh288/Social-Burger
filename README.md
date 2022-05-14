@@ -15,7 +15,7 @@
  
 # Deployed App 🌐
 [![Social Burger Site](./public/assets/logo-uncropped.png)](https://social-burger.herokuapp.com/)
-<figcaption align="center">Deployed Link</figcaption>
+https://social-burger.herokuapp.com/
 
 
 # Samples 🍔
