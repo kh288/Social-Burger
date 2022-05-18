@@ -1,44 +1,46 @@
-const delButtonHandler = async (event) => {
-    event.preventDefault();
-
-    const id = document.querySelector('.deleteBtn').value.trim()
-    console.log(id);
-
-    const response = await fetch(`/api/burger/${id}`, {
-        method: 'DELETE',
-        body: JSON.stringify({
-            burger_id: id
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-    if (response.ok) {
-        document.location.replace('/dashboard/');
-    } else {
-        alert(response.statusText);
-        document.location.replace('/dashboard/');
-    }
-}
-
-
-
 // const delButtonHandler = async (event) => {
+//     event.preventDefault();
 
-//     if (event.target.hasAttribute('data-id')) {
-//         const id = event.target.getAttribute('data-id');
+//     const id = document.querySelector('.deleteBtn').id
+//     console.log(id);
 
-//         const response = await fetch(`/api/burger/${id}`, {
-//             method: 'DELETE',
-//         });
-//         if (response.ok) {
-//             document.location.replace('/dashboard/');
-//         } else {
-//             alert('Failed to delete Burger');
+//     const response = await fetch(`/api/burger/${id}`, {
+//         method: 'DELETE',
+//         body: JSON.stringify({
+//             burger_id: id
+//         }),
+//         headers: {
+//             'Content-Type': 'application/json'
 //         }
+//     });
+//     if (response.ok) {
+//         document.location.replace('/dashboard');
+//     } else {
+//         alert(response.statusText);
 //     }
-// };
+// }
+
+
+
+const delButtonHandler = async (event) => {
+
+    if (event.target.id) {
+        const id = event.target.id;
+        console.log('---------------------------------------', id);
+        const response = await fetch(`/api/burger/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to delete Burger');
+        }
+    }
+};
 
 document
-    .querySelector('.deleteForm')
-    .addEventListener('submit', delButtonHandler);
+    .querySelector('.deleteBtn')
+    .addEventListener('click', delButtonHandler);
